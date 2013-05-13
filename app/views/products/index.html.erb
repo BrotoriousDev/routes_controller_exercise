@@ -1,11 +1,10 @@
-<h4>There are <%= Product.count %> things in the databrays</h4>
+<% allprods = Product.includes(:user).all %>
+<ul>
+  <% allprods.each do |p| %>
+      <li>
+       Name: "<%= p.name %>"" costs $<%= p.price %>
+        Sold by <%= p.user.name %>
+      </li>
+  <% end%>
 
-
-<% fp = Product.first %>
-<p> The amazing man who sells this product is <%= fp.user.name %></p>
-<p>
-  Product Name: "<%= fp.name %>"" costs $<%= fp.price %>
-</p>
-
-
-
+</ul>
