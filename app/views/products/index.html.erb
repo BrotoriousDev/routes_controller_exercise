@@ -1,4 +1,11 @@
-<h2> I AMA View </h2>
+<h4>There are <%= Product.count %> things in the databrays</h4>
+
+
+<% fp = Product.first %>
+<p> The amazing man who sells this product is <%= fp.user.name %></p>
 <p>
-  Find me in <%= Rails.root.join("app", "views", "products", __FILE__ ) %>
+  Product Name: "<%= fp.name %>"" costs $<%= fp.price %>
 </p>
+
+
+
